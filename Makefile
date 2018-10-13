@@ -1,7 +1,7 @@
 NODE=`which node`
 EXE_DIR="./exercises/"
 TST_DIR="./tests/"
-LESSONS=`ls $(EXE_DIR) | grep "lesson" | cut -d '.' -f 1`
+LESSONS=`ls $(EXE_DIR) | grep "lesson\d.js" | cut -d '.' -f 1`
 STRING="joder sion!"
 NULL="/dev/null"
 
