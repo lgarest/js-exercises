@@ -23,29 +23,29 @@ function hello() {
 module.exports = hello;
 ```
 
-Rules:
+Rules
 -
-- Put your solution **in the stated place between the comments**
-- **Don't** modify the rest of the code ❌
-- Enjoy the process 😊
+  - Put your solution **in the stated place between the comments**
+  - **Don't** modify the rest of the code ❌
+  - Enjoy the process 😊
 
-Testing:
+Testing
 -
 Once you have written your solution and you want to check if everything is correct, in the terminal use:
 
-```
+```bash
 make
 ```
 to run all exercises tests or
-```
+```bash
 make lesson0
 ```
 to run only the dedicated tests. In this case the ones only for the `lesson0.js` file.
 
 You should be seeing something like
-```
+```bash
 $ make lesson0
 Testing ./exercises/lesson0.js file:
 null
-  #1: Testing that it returns Hello World! => Fail: got null and was expecting Hello World!
+  1: Testing that it returns Hello World! => Fail: got null and was expecting Hello World!
 ```
