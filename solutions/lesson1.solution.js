@@ -15,14 +15,17 @@ function isOdd(input) {
   }
 
   /*
-    // 'No else' version
+    // 'Variable defaulting' version
+    // By defaulting the output to false, only in the case of the input being
+    // a number, we are saving executing line 23
     output = false
     if (typeof(input) === 'number') {
       output = input % 2 !== 0;
     }
    */
   /*
-    // 'One line' version
+    // 'Shortcircuit oneliner' version using built-in javascript shortcircuits
+    // More info about 'Short-circuit' evaluation in: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Short-circuit_evaluation
     output = typeof(input) === 'number' && input % 2 !== 0;
    */
 
