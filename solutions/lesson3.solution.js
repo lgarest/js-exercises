@@ -16,7 +16,20 @@ function celsiusToFahrenheit(input) {
   }
 
   /*
+    // 'Ternary' version
+    // Note: As you can see, this version is shorter than the previous one.
+    // The good thing is that is declarative, so you don't need to think about
+    // if the code is entering in the 'if' block or not.
+    // The downside is that to unexperienced developers, it's harder to follow.
+    output = typeof(input) === 'number'
+      ? parseFloat(((input * 9) / 5 + 32).toFixed(2))
+      : 'not a number';
+  */
+
+  /*
     // 'Ternary with hacky cast to integer' version
+    // Note: As you can see, this version is shorter than the previous one
+    // and looks 'cooler' but, is harder to reason about, so, use with caution
     output = typeof(input) === 'number'
       ? +((input * 9) / 5 + 32).toFixed(2)
       : 'not a number';
