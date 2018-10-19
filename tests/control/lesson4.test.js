@@ -1,8 +1,8 @@
 // import the fn
-const getCurrentAge = require('../exercises/lesson4');
+const getCurrentAge = require('../../lessons/control/lesson4');
 
 // and test it
-const test = require('../lib/test');
+const test = require('../../lib/test');
 test(
   'someone born on 1st January 1980 was 19 years old on The Matrix premiere',
   getCurrentAge('01/01/1980'), 19
