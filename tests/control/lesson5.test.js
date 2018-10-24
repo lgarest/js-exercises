@@ -1,8 +1,8 @@
 // import the fn
-const calculator = require('../exercises/lesson5');
+const calculator = require('../../lessons/control/lesson5');
 
 // and test it
-const test = require('../lib/test');
+const test = require('../../lib/test');
 test('2 plus 3 equals 5', calculator(2, '+', 3), 5);
 test('2 minus 3 equals -1', calculator(2, '-', 3), -1);
 test('2 times 3 equals 6', calculator(2, '*', 3), 6);
