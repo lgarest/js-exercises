@@ -2,18 +2,46 @@
 const isOdd = require('../../lessons/control/lesson1');
 
 // and test it
-const test = require('../../lib/test');
+const test = require('../../lib/test')().testCase;
 
-test('5 is an odd number', isOdd(5), true);
+test({
+  text: '5 is an odd number',
+  actual: isOdd(5),
+  expected: true
+});
 
-test('3 is an odd number', isOdd(3), true);
+test({
+  text: '3 is an odd number',
+  actual: isOdd(3),
+  expected: true
+});
 
-test('2 is not an odd number', isOdd(2), false);
+test({
+  text: '2 is not an odd number',
+  actual: isOdd(2),
+  expected: false
+});
 
-test('0 is not an odd number', isOdd(0), false);
+test({
+  text: '0 is not an odd number',
+  actual: isOdd(0),
+  expected: false
+});
 
-test('\'a\' is not a number', isOdd('a'), false);
+test({
+  text: '\'a\' is not a number',
+  actual: isOdd('a'),
+  expected: false
+});
 
-test('[] is not a number', isOdd([]), false);
+test({
+  text: '[] is not a number',
+  actual: isOdd([]),
+  expected: false
+});
 
-test('{} is not a number', isOdd({}), false);
+test({
+  text: '{} is not a number',
+  actual: isOdd({}),
+  expected: false
+});

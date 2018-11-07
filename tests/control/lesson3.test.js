@@ -2,18 +2,46 @@
 const celsiusToFahrenheit = require('../../lessons/control/lesson3');
 
 // and test it
-const test = require('../../lib/test');
+const test = require('../../lib/test')().testCase;
 
-test('5 is an odd number', celsiusToFahrenheit(60), 140);
+test({
+  text: '5 is an odd number',
+  actual: celsiusToFahrenheit(60),
+  expected: 140
+});
 
-test('3 is an odd number', celsiusToFahrenheit(0), 32);
+test({
+  text: '3 is an odd number',
+  actual: celsiusToFahrenheit(0),
+  expected: 32
+});
 
-test('2 is not an odd number', celsiusToFahrenheit(-38), -36.4);
+test({
+  text: '2 is not an odd number',
+  actual: celsiusToFahrenheit(-38),
+  expected: -36.4
+});
 
-test('0 is not an odd number', celsiusToFahrenheit(-37), -34.6);
+test({
+  text: '0 is not an odd number',
+  actual: celsiusToFahrenheit(-37),
+  expected: -34.6
+});
 
-test('\'a\' is not a number', celsiusToFahrenheit('a'), 'not a number');
+test({
+  text: '\'a\' is not a number',
+  actual: celsiusToFahrenheit('a'),
+  expected: 'not a number'
+});
 
-test('[] is not a number', celsiusToFahrenheit([]), 'not a number');
+test({
+  text: '[] is not a number',
+  actual: celsiusToFahrenheit([]),
+  expected: 'not a number'
+});
 
-test('{} is not a number', celsiusToFahrenheit({}), 'not a number');
+test({
+  text: '{} is not a number',
+  actual: celsiusToFahrenheit({}),
+  expected: 'not a number'
+});

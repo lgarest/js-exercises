@@ -2,18 +2,46 @@
 const evenOrOdd = require('../../lessons/control/lesson2');
 
 // and test it
-const test = require('../../lib/test');
+const test = require('../../lib/test')().testCase;
 
-test('5 is an odd number', evenOrOdd(5), 'odd');
+test({
+  text: '5 is an odd number',
+  actual: evenOrOdd(5),
+  expected: 'odd'
+});
 
-test('3 is an odd number', evenOrOdd(3), 'odd');
+test({
+  text: '3 is an odd number',
+  actual: evenOrOdd(3),
+  expected: 'odd'
+});
 
-test('2 is not an odd number', evenOrOdd(2), 'even');
+test({
+  text: '2 is not an odd number',
+  actual: evenOrOdd(2),
+  expected: 'even'
+});
 
-test('0 is not an odd number', evenOrOdd(0), 'even');
+test({
+  text: '0 is not an odd number',
+  actual: evenOrOdd(0),
+  expected: 'even'
+});
 
-test('\'a\' is not a number', evenOrOdd('a'), 'not a number');
+test({
+  text: '\'a\' is not a number',
+  actual: evenOrOdd('a'),
+  expected: 'not a number'
+});
 
-test('[] is not a number', evenOrOdd([]), 'not a number');
+test({
+  text: '[] is not a number',
+  actual: evenOrOdd([]),
+  expected: 'not a number'
+});
 
-test('{} is not a number', evenOrOdd({}), 'not a number');
+test({
+  text: '{} is not a number',
+  actual: evenOrOdd({}),
+  expected: 'not a number'
+});

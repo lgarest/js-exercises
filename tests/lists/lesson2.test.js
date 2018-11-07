@@ -2,19 +2,34 @@
 const average = require('../../lessons/lists/lesson2');
 
 // and test it
-const test = require('../../lib/test');
+const test = require('../../lib/test')().testCase;
 
-test('it returns 2.5 if we pass the list [1, 2, 3, 4]',
-  average([1, 2, 3, 4]), 2.5);
+test({
+  text: 'it returns 2.5 if we pass the list [1, 2, 3, 4]',
+  actual: average([1, 2, 3, 4]),
+  expected: 2.5
+});
 
-test('it returns \'invalid input\' if we pass {}',
-  average({}), 'invalid input');
+test({
+  text: 'it returns \'invalid input\' if we pass {}',
+  actual: average({}),
+  expected: 'invalid input'
+});
 
-test('it returns \'invalid input\' if we pass []',
-  average([]), 'invalid input');
+test({
+  text: 'it returns \'invalid input\' if we pass []',
+  actual: average([]),
+  expected: 'invalid input'
+});
 
-test('it returns \'invalid input\' if we pass \'a\'',
-  average('a'), 'invalid input');
+test({
+  text: 'it returns \'invalid input\' if we pass \'a\'',
+  actual: average('a'),
+  expected: 'invalid input'
+});
 
-test('it returns \'invalid input\' if we pass 2',
-  average(2), 'invalid input');
+test({
+  text: 'it returns \'invalid input\' if we pass 2',
+  actual: average(2),
+  expected: 'invalid input'
+});

@@ -2,27 +2,70 @@
 const calculator = require('../../lessons/control/lesson5');
 
 // and test it
-const test = require('../../lib/test');
+const test = require('../../lib/test')().testCase;
 
-test('2 plus 3 equals 5', calculator(2, '+', 3), 5);
+test({
+  text: '2 plus 3 equals 5',
+  actual: calculator(2, '+', 3),
+  expected: 5
+});
 
-test('2 minus 3 equals -1', calculator(2, '-', 3), -1);
+test({
+  text: '2 minus 3 equals -1',
+  actual: calculator(2, '-', 3),
+  expected: -1
+});
 
-test('2 times 3 equals 6', calculator(2, '*', 3), 6);
+test({
+  text: '2 times 3 equals 6',
+  actual: calculator(2, '*', 3),
+  expected: 6
+});
 
-test('2 divided by 3 equals 0.67', calculator(2, '/', 3), (0.67).toFixed(2));
-test(
-  'any number divided by 0 is Infinity',
-  calculator(5, '/', 0), (Infinity).toFixed(2));
+test({
+  text: '2 divided by 3 equals 0.67',
+  actual: calculator(2, '/', 3),
+  expected: (0.67).toFixed(2)
+});
 
-test('5 modul 3 equals 2', calculator(5, '%', 3), 2);
+test({
+  text: 'any number divided by 0 is Infinity',
+  actual: calculator(5, '/', 0),
+  expected: (Infinity).toFixed(2)
+});
 
-test('! is not a valid input', calculator('!'), 'not a valid input');
+test({
+  text: '5 modul 3 equals 2',
+  actual: calculator(5, '%', 3),
+  expected: 2
+});
 
-test('\'a\' is not a valid input', calculator('a'), 'not a valid input');
+test({
+  text: '! is not a valid input',
+  actual: calculator('!'),
+  expected: 'not a valid input'
+});
 
-test('undefined is not a valid input', calculator(), 'not a valid input');
+test({
+  text: '\'a\' is not a valid input',
+  actual: calculator('a'),
+  expected: 'not a valid input'
+});
 
-test('list is not a valid input', calculator([]), 'not a valid input');
+test({
+  text: 'undefined is not a valid input',
+  actual: calculator(),
+  expected: 'not a valid input'
+});
 
-test('object is not a valid input', calculator({}), 'not a valid input');
+test({
+  text: 'list is not a valid input',
+  actual: calculator([]),
+  expected: 'not a valid input'
+});
+
+test({
+  text: 'object is not a valid input',
+  actual: calculator({}),
+  expected: 'not a valid input'
+});
