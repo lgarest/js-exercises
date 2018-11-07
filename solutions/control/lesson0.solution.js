@@ -1,6 +1,6 @@
 /**
- * Greets the world with your first steps!
- * @return {str}
+  * Greets the world with your first steps!
+ * @return {str} Hello World!
  */
 function hello() {
   let output = null;

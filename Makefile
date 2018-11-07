@@ -15,7 +15,7 @@ default: test-all
 lesson%:
 	$(eval matches := $(shell find $(EXE_DIR) -name "$@.js" | sort))
 	@for match in $(matches); do \
-		echo "Testing $$match file:"; \
+		echo "• Testing $$match file:"; \
 		path_file=`echo $$match | cut -d '/' -f 2-3`;\
 		test_file=`echo "$${path_file/.js/.test.js}"`;\
 		$(NODE) $(TST_DIR)/$$test_file;\
@@ -23,7 +23,7 @@ lesson%:
 
 test-all:
 	@for lesson in $(LESSONS); do \
-		echo "Testing $$lesson file:"; \
+		echo "• Testing $$lesson file:"; \
 		path_file=`echo $$lesson | cut -d '/' -f 2-3`;\
 		test_file=`echo "$${path_file/.js/.test.js}"`;\
 		$(NODE) $(TST_DIR)/$$test_file;\
@@ -33,7 +33,7 @@ test-solutions: clean copy-tests backup-solutions
 	@# replace imported file on every test inside test-solutions to point
 	@# to the solutions instead
 	@for test in $(TEST_SOLUTIONS); do \
-		echo "Testing $$test file:"; \
+		echo "• Testing $$test file:"; \
 		path_file=`echo $$test | cut -d '/' -f 3 | cut -d '.' -f 1` ;\
 		sed -e s/lessons/$(SOL_BCKP_DIR)/g $$test > $$test.tmp ;\
 		rm $$test && mv $$test.tmp $$test ;\
