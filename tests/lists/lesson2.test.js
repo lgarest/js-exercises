@@ -4,7 +4,7 @@ const average = require('../../lessons/lists/lesson2');
 // and test it
 const test = require('../../lib/test');
 
-test('it returns 10 if we pass the list [1, 2, 3, 4]',
+test('it returns 2.5 if we pass the list [1, 2, 3, 4]',
   average([1, 2, 3, 4]), 2.5);
 
 test('it returns \'invalid input\' if we pass {}',

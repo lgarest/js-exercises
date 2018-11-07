@@ -1,9 +1,9 @@
 /**
  * Gets the average of the numbers in the list
- * @param {num}  input list of numbers
+ * @param {list}  input list of numbers
  * @return {num} average of the numbers if he list
  * has items as is not empty
- * @return {str} 'invalid input' otherwise 
+ * @return {str} 'invalid input' otherwise
  */
 function average(input) {
   let output = null;

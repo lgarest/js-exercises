@@ -1,9 +1,9 @@
 /**
  * Gets the average of the numbers in the list
  * @param {num}  input list of numbers
- * @return {num} average of the numbers if he list
+ * @return {num} average of the numbers if the list
  * has items as is not empty
- * @return {str} 'invalid input' otherwise 
+ * @return {str} 'invalid input' otherwise
  */
 function average(input) {
   let output = null;
@@ -12,7 +12,7 @@ function average(input) {
   output = 'invalid input';
   if (Array.isArray(input) && input.length > 0) {
     let counter = 0;
-  
+
     for(let i=0; i < input.length; i++) {
         counter += input[i];
     }
