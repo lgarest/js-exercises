@@ -4,8 +4,9 @@ TST_DIR="tests"
 SOL_DIR="solutions"
 TSTSOL_DIR=".test_solutions"
 SOL_BCKP_DIR=".solutions.bckp"
-LESSONS=`find $(EXE_DIR) -name "*.js" | sort | grep "[l]esson\d.js"`
-TEST_SOLUTIONS=`find $(TSTSOL_DIR) -name "*.js" | sort | grep "[l]esson\d"`
+# LESSONS=`find $(EXE_DIR) -name "*.js" | sort | grep "[l]esson[0-9]+.js"`
+LESSONS=`find $(EXE_DIR) -name "*.js" | sort | grep -e "lesson[0-9].js"`
+TEST_SOLUTIONS=`find $(TSTSOL_DIR) -name "*.js" | sort | grep "[l]esson[0-9]+"`
 STRING="joder sion!"
 NULL="/dev/null"
 
@@ -17,7 +18,7 @@ lesson%:
 	@for match in $(matches); do \
 		echo "Testing $$match file:"; \
 		path_file=`echo $$match | cut -d '/' -f 2-3`;\
-		test_file=`echo "$${path_file/.js/.test.js}"`;\
+		test_file=`echo "$${path_file/.js/.test.js}"`;\,,
 		$(NODE) $(TST_DIR)/$$test_file;\
 	done
 
@@ -46,7 +47,7 @@ copy-tests:
 
 backup-solutions:
 	@cp -r $(SOL_DIR)/ $(SOL_BCKP_DIR)
-	@rename -S .solution.js .js $(SOL_BCKP_DIR)/**/*.solution.js
+	rename 's/.solution.js/.js/' $(SOL_BCKP_DIR)/**/*.solution.js
 
 clean:
 	@echo "Tyding up 💅"
